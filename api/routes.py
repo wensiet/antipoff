@@ -3,7 +3,7 @@ from starlette.responses import JSONResponse, FileResponse
 from starlette.staticfiles import StaticFiles
 
 from repositories import RequestsRepository
-from schemas import InputRequestSchema, RequestSchema
+from schemas import InputRequestSchema
 from services.requests_service import RequestsService
 
 app = FastAPI()
