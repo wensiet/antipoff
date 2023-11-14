@@ -1,0 +1,4 @@
+FROM mongo:latest
+
+ENV MONGO_INITDB_DATABASE=antipoff
+ENV MONGO_INITDB_COLLECTION=requests

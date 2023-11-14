@@ -1,0 +1,16 @@
+FROM python:3.9
+
+WORKDIR /app
+
+COPY requirements /app/
+RUN python -m venv venv
+RUN . venv/bin/activate && pip install --upgrade pip && pip install -r requirements
+RUN pip uninstall pymongo && pip uninstall bson
+RUN pip install pymongo
+
+COPY . /app/
+
+EXPOSE 8000
+
+CMD ["venv/bin/uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000"]
+# CMD ["venv/bin/python", "main.py"]
